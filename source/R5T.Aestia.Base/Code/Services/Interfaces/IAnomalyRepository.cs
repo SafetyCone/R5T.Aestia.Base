@@ -17,9 +17,9 @@ namespace R5T.Aestia
         AnomalyIdentity New();
 
 
-        void SetReportedDateTimeUTC(AnomalyIdentity anomaly, DateTime dateTime);
+        void SetReportedUTC(AnomalyIdentity anomaly, DateTime dateTime);
 
-        DateTime GetReportedDateTimeUTC(AnomalyIdentity anomaly);
+        DateTime GetReportedUTC(AnomalyIdentity anomaly);
 
 
         /// <summary>
