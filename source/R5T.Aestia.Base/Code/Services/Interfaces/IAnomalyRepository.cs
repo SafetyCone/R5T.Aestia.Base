@@ -49,6 +49,8 @@ namespace R5T.Aestia
         LocationIdentity GetReporterLocation(AnomalyIdentity anomaly);
 
 
+        bool ExistsTextItem(AnomalyIdentity anomaly, TextItemTypeIdentity textItemType);
+
         void SetTextItem(AnomalyIdentity anomaly, TextItemTypeIdentity textItemType, TextItemIdentity textItem);
 
         TextItemIdentity GetTextItem(AnomalyIdentity anomaly, TextItemTypeIdentity textItemType);
