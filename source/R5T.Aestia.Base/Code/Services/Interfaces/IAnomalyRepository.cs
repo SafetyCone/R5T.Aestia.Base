@@ -23,14 +23,30 @@ namespace R5T.Aestia
         Task<DateTime> GetReportedUTC(AnomalyIdentity anomaly);
 
 
+        #region Catchment
+
+        Task<(bool HasCatchment, CatchmentIdentity CatchmentIdentity)> HasCatchment(AnomalyIdentity anomalyIdentity);
+
+        Task<CatchmentIdentity> GetCatchment(AnomalyIdentity anomalyIdentity);
+
+        Task SetCatchment(AnomalyIdentity anomalyIdentity, CatchmentIdentity catchmentIdentity);
+
+        #endregion
+
+
+        #region Image File
+
         /// <summary>
         /// Adds an image file to the anomaly.
         /// There can be multiple images per anomaly.
         /// </summary>
         Task AddImageFile(AnomalyIdentity anomaly, ImageFileIdentity imageFile);
 
-       Task<IEnumerable<ImageFileIdentity>> GetImageFiles(AnomalyIdentity anomalyIdentity);
+        Task<IEnumerable<ImageFileIdentity>> GetImageFiles(AnomalyIdentity anomalyIdentity);
 
+        #endregion
+
+        #region Reported and Reporter Location
 
         /// <summary>
         /// An anomaly has only one reported location.
@@ -49,6 +65,9 @@ namespace R5T.Aestia
 
         Task<LocationIdentity> GetReporterLocation(AnomalyIdentity anomaly);
 
+        #endregion
+
+        #region Text Items
 
         Task<bool> ExistsTextItem(AnomalyIdentity anomaly, TextItemTypeIdentity textItemType);
 
@@ -57,5 +76,7 @@ namespace R5T.Aestia
         Task<TextItemIdentity> GetTextItem(AnomalyIdentity anomaly, TextItemTypeIdentity textItemType);
 
         Task<IEnumerable<Tuple<TextItemTypeIdentity, TextItemIdentity>>> GetTextItems(AnomalyIdentity anomaly);
+
+        #endregion
     }
 }
