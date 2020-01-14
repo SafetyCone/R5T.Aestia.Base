@@ -22,6 +22,11 @@ namespace R5T.Aestia
 
         Task<DateTime> GetReportedUTC(AnomalyIdentity anomaly);
 
+        /// <summary>
+        /// Get all information the repository contains about the anomaly.
+        /// </summary>
+        Task<AnomalyInfo> GetAnomalyInfo(AnomalyIdentity anomalyIdentity);
+
 
         #region Catchment
 
@@ -46,6 +51,7 @@ namespace R5T.Aestia
 
         #endregion
 
+
         #region Reported and Reporter Location
 
         /// <summary>
@@ -66,6 +72,7 @@ namespace R5T.Aestia
         Task<LocationIdentity> GetReporterLocation(AnomalyIdentity anomaly);
 
         #endregion
+
 
         #region Text Items
 
