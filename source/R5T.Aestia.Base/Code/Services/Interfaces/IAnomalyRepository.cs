@@ -36,6 +36,8 @@ namespace R5T.Aestia
 
         Task SetCatchment(AnomalyIdentity anomalyIdentity, CatchmentIdentity catchmentIdentity);
 
+        Task<IEnumerable<AnomalyIdentity>> GetAllAnomaliesInCatchment(CatchmentIdentity catchmentIdentity);
+
         #endregion
 
 
