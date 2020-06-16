@@ -18,6 +18,10 @@ namespace R5T.Aestia
         Task<AnomalyIdentity> New();
 
 
+        Task AddAsync(AnomalyIdentity anomalyIdentity);
+
+        Task<bool> ExistsAsync(AnomalyIdentity anomalyIdentity);
+
         Task SetReportedUTC(AnomalyIdentity anomaly, DateTime dateTime);
 
         Task<DateTime> GetReportedUTC(AnomalyIdentity anomaly);
