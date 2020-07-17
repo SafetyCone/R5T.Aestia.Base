@@ -65,7 +65,7 @@ namespace R5T.Aestia
         /// </summary>
         Task SetReportedLocation(AnomalyIdentity anomaly, LocationIdentity reportedLocation);
 
-        Task<LocationIdentity> GetReportedLocation(AnomalyIdentity anomaly);
+        Task<LocationIdentity> GetReportedLocationAsync(AnomalyIdentity anomaly);
 
 
         Task SetReporterLocation(AnomalyIdentity anomaly, LocationIdentity reporterLocation);
