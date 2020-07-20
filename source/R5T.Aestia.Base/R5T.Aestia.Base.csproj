@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\R5T.Corcyra\source\R5T.Corcyra\R5T.Corcyra.csproj" />
     <ProjectReference Include="..\..\..\R5T.Francia\source\R5T.Francia\R5T.Francia.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Orgerben\source\R5T.Orgerben\R5T.Orgerben.csproj" />
     <ProjectReference Include="..\..\..\R5T.Sindia\source\R5T.Sindia\R5T.Sindia.csproj" />
     <ProjectReference Include="..\..\..\R5T.Siscia\source\R5T.Siscia\R5T.Siscia.csproj" />
   </ItemGroup>

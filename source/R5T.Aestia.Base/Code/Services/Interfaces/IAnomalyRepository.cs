@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 using R5T.Corcyra;
 using R5T.Francia;
+using R5T.Orgerben;
 using R5T.Sindia;
 using R5T.Siscia;
 
@@ -45,6 +46,12 @@ namespace R5T.Aestia
 
         #endregion
 
+        #region Organization
+
+        Task SetOrganization(AnomalyIdentity anomalyIdentity, OrganizationIdentity organizationIdentity);
+
+        #endregion
+
 
         #region Image File
 
@@ -66,7 +73,7 @@ namespace R5T.Aestia
         /// </summary>
         Task SetReportedLocation(AnomalyIdentity anomaly, LocationIdentity reportedLocation);
 
-        Task<LocationIdentity> GetReportedLocation(AnomalyIdentity anomaly);
+        Task<LocationIdentity> GetReportedLocationAsync(AnomalyIdentity anomaly);
 
 
         Task SetReporterLocation(AnomalyIdentity anomaly, LocationIdentity reporterLocation);
