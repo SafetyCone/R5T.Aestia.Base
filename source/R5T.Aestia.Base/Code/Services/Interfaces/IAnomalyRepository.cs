@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 using R5T.Corcyra;
 using R5T.Francia;
+using R5T.Orgerben;
 using R5T.Sindia;
 using R5T.Siscia;
 
@@ -41,6 +42,12 @@ namespace R5T.Aestia
         Task SetCatchment(AnomalyIdentity anomalyIdentity, CatchmentIdentity catchmentIdentity);
 
         Task<IEnumerable<AnomalyIdentity>> GetAllAnomaliesInCatchment(CatchmentIdentity catchmentIdentity);
+
+        #endregion
+
+        #region Organization
+
+        Task SetOrganization(AnomalyIdentity anomalyIdentity, OrganizationIdentity organizationIdentity);
 
         #endregion
 
