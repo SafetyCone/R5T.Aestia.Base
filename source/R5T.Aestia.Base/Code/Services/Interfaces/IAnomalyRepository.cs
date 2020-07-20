@@ -31,6 +31,7 @@ namespace R5T.Aestia
         /// </summary>
         Task<AnomalyInfo> GetAnomalyInfo(AnomalyIdentity anomalyIdentity);
 
+        Task<List<AnomalyInfo>> GetAnomalyInfos(List<AnomalyIdentity> anomalyIdentities);
 
         #region Catchment
 
@@ -40,7 +41,7 @@ namespace R5T.Aestia
 
         Task SetCatchment(AnomalyIdentity anomalyIdentity, CatchmentIdentity catchmentIdentity);
 
-        Task<IEnumerable<AnomalyIdentity>> GetAllAnomaliesInCatchment(CatchmentIdentity catchmentIdentity);
+        Task<List<AnomalyIdentity>> GetAllAnomaliesInCatchment(CatchmentIdentity catchmentIdentity);
 
         #endregion
 
@@ -53,7 +54,7 @@ namespace R5T.Aestia
         /// </summary>
         Task AddImageFile(AnomalyIdentity anomaly, ImageFileIdentity imageFile);
 
-        Task<IEnumerable<ImageFileIdentity>> GetImageFiles(AnomalyIdentity anomalyIdentity);
+        Task<List<ImageFileIdentity>> GetImageFiles(AnomalyIdentity anomalyIdentity);
 
         #endregion
 
@@ -88,7 +89,7 @@ namespace R5T.Aestia
 
         Task<TextItemIdentity> GetTextItem(AnomalyIdentity anomaly, TextItemTypeIdentity textItemType);
 
-        Task<IEnumerable<Tuple<TextItemTypeIdentity, TextItemIdentity>>> GetTextItems(AnomalyIdentity anomaly);
+        Task<List<Tuple<TextItemTypeIdentity, TextItemIdentity>>> GetTextItems(AnomalyIdentity anomaly);
 
         #endregion
     }
