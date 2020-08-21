@@ -65,6 +65,8 @@ namespace R5T.Aestia
 
         Task<List<ImageFileIdentity>> GetImageFiles(AnomalyIdentity anomalyIdentity);
 
+        Task<Dictionary<AnomalyIdentity, List<ImageFileIdentity>>> GetImageFilesForAnomalies(IEnumerable<AnomalyIdentity> anomalyIdentities);
+
         #endregion
 
 
