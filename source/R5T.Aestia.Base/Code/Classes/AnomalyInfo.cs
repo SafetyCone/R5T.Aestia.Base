@@ -20,6 +20,7 @@ namespace R5T.Aestia
         public List<TextItemIdentity> TextItems { get; set; }
 
         public bool HasCatchment => this.CatchmentIdentity is object;
+        public bool HasReportedLocation => this.ReportedLocation is object;
         public bool HasReporterLocation => this.ReporterLocation is object;
     }
 }
