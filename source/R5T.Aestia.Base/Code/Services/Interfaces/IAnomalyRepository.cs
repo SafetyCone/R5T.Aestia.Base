@@ -13,7 +13,7 @@ namespace R5T.Aestia
 {
     public interface IAnomalyRepository
     {
-        Task Add(AnomalyIdentity anomalyIdentity);
+        Task Add(AnomalyIdentity anomalyIdentity, DateTime reportedUTC);
 
         Task<bool> Exists(AnomalyIdentity anomalyIdentity);
 
@@ -28,9 +28,9 @@ namespace R5T.Aestia
 
         Task<List<AnomalyInfo>> GetAnomalyInfos(List<AnomalyIdentity> anomalyIdentities);
 
-        Task<int> GetUpvoteCount(AnomalyIdentity anomalyIdentity);
+        Task<int> GetUpvotesCount(AnomalyIdentity anomalyIdentity);
 
-        Task SetUpvoteCount(AnomalyIdentity anomalyIdentity, int upvoteCount);
+        Task SetUpvotesCount(AnomalyIdentity anomalyIdentity, int upvoteCount);
 
 
         #region Catchment

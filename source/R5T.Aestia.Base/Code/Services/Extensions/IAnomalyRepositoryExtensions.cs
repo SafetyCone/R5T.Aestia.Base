@@ -16,21 +16,21 @@ namespace R5T.Aestia
         /// Creates a new anomaly identity.
         /// Uses the static <see cref="AnomalyIdentity.New()"/> functionality.
         /// </summary>
-        public static async Task<AnomalyIdentity> New(this IAnomalyRepository anomalyRepository)
+        public static async Task<AnomalyIdentity> New(this IAnomalyRepository anomalyRepository, DateTime reportedUTC)
         {
             var anomalyIdentity = AnomalyIdentity.New();
 
-            await anomalyRepository.Add(anomalyIdentity);
+            await anomalyRepository.Add(anomalyIdentity, reportedUTC);
 
             return anomalyIdentity;
         }
 
-        public static async Task AddOnlyIfNotExistsAsync(this IAnomalyRepository anomalyRepository, AnomalyIdentity anomalyIdentity)
+        public static async Task AddOnlyIfNotExistsAsync(this IAnomalyRepository anomalyRepository, AnomalyIdentity anomalyIdentity, DateTime reportedUTC)
         {
             var exists = await anomalyRepository.Exists(anomalyIdentity);
             if (!exists)
             {
-                await anomalyRepository.Add(anomalyIdentity);
+                await anomalyRepository.Add(anomalyIdentity, reportedUTC);
             }
         }
 
