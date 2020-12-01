@@ -13,12 +13,6 @@ namespace R5T.Aestia
 {
     public interface IAnomalyRepository
     {
-        /// <summary>
-        /// Creates a new anomaly identity.
-        /// </summary>
-        Task<AnomalyIdentity> New();
-
-
         Task AddAsync(AnomalyIdentity anomalyIdentity);
 
         Task<bool> ExistsAsync(AnomalyIdentity anomalyIdentity);
@@ -33,6 +27,10 @@ namespace R5T.Aestia
         Task<AnomalyInfo> GetAnomalyInfo(AnomalyIdentity anomalyIdentity);
 
         Task<List<AnomalyInfo>> GetAnomalyInfos(List<AnomalyIdentity> anomalyIdentities);
+
+        Task<int> GetUpvoteCount(AnomalyIdentity anomalyIdentity);
+
+        Task SetUpvoteCount(AnomalyIdentity anomalyIdentity, int upvoteCount);
 
 
         #region Catchment

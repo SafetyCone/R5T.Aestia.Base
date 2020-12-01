@@ -12,6 +12,19 @@ namespace R5T.Aestia
 {
     public static class IAnomalyRepositoryExtensions
     {
+        /// <summary>
+        /// Creates a new anomaly identity.
+        /// Uses the static <see cref="AnomalyIdentity.New()"/> functionality.
+        /// </summary>
+        public static async Task<AnomalyIdentity> New(this IAnomalyRepository anomalyRepository)
+        {
+            var anomalyIdentity = AnomalyIdentity.New();
+
+            await anomalyRepository.AddAsync(anomalyIdentity);
+
+            return anomalyIdentity;
+        }
+
         public static async Task AddOnlyIfNotExistsAsync(this IAnomalyRepository anomalyRepository, AnomalyIdentity anomalyIdentity)
         {
             var exists = await anomalyRepository.ExistsAsync(anomalyIdentity);
