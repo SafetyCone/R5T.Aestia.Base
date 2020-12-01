@@ -20,17 +20,17 @@ namespace R5T.Aestia
         {
             var anomalyIdentity = AnomalyIdentity.New();
 
-            await anomalyRepository.AddAsync(anomalyIdentity);
+            await anomalyRepository.Add(anomalyIdentity);
 
             return anomalyIdentity;
         }
 
         public static async Task AddOnlyIfNotExistsAsync(this IAnomalyRepository anomalyRepository, AnomalyIdentity anomalyIdentity)
         {
-            var exists = await anomalyRepository.ExistsAsync(anomalyIdentity);
+            var exists = await anomalyRepository.Exists(anomalyIdentity);
             if (!exists)
             {
-                await anomalyRepository.AddAsync(anomalyIdentity);
+                await anomalyRepository.Add(anomalyIdentity);
             }
         }
 

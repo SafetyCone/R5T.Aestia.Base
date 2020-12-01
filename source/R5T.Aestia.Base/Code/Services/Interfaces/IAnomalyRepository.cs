@@ -13,9 +13,9 @@ namespace R5T.Aestia
 {
     public interface IAnomalyRepository
     {
-        Task AddAsync(AnomalyIdentity anomalyIdentity);
+        Task Add(AnomalyIdentity anomalyIdentity);
 
-        Task<bool> ExistsAsync(AnomalyIdentity anomalyIdentity);
+        Task<bool> Exists(AnomalyIdentity anomalyIdentity);
 
         Task SetReportedUTC(AnomalyIdentity anomalyIdentity, DateTime dateTime);
 
@@ -75,7 +75,7 @@ namespace R5T.Aestia
         /// </summary>
         Task SetReportedLocation(AnomalyIdentity anomalyIdentity, LocationIdentity reportedLocationIdentity);
 
-        Task<LocationIdentity> GetReportedLocationAsync(AnomalyIdentity anomalyIdentity);
+        Task<LocationIdentity> GetReportedLocation(AnomalyIdentity anomalyIdentity);
 
         Task SetReporterLocation(AnomalyIdentity anomalyIdentity, LocationIdentity reporterLocation);
 
