@@ -19,6 +19,7 @@ namespace R5T.Aestia
         public LocationIdentity ReportedLocation { get; set; }
         public LocationIdentity ReporterLocation { get; set; }
         public List<TextItemIdentity> TextItems { get; set; }
+        public int UpvotesCount { get; set; }
 
         public bool HasCatchment => this.CatchmentIdentities.Any();
         public bool HasReportedLocation => this.ReportedLocation is object;

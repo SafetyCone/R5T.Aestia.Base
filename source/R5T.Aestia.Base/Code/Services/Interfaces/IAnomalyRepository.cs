@@ -30,7 +30,8 @@ namespace R5T.Aestia
 
         Task<int> GetUpvotesCount(AnomalyIdentity anomalyIdentity);
 
-        Task SetUpvotesCount(AnomalyIdentity anomalyIdentity, int upvoteCount);
+        // Increment rather than setting upvote count. This handles the case of two simultaneous upvotes.
+        Task IncrementUpvotesCount(AnomalyIdentity anomalyIdentity);
 
 
         #region Catchment
