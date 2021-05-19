@@ -45,16 +45,9 @@ namespace R5T.Aestia
 
         Task<List<CatchmentIdentity>> GetCatchments(AnomalyIdentity anomalyIdentity);
 
-        Task AddCatchment(AnomalyIdentity anomalyIdentity, CatchmentIdentity catchmentIdentity);
+        Task<bool> AddCatchment(AnomalyIdentity anomalyIdentity, CatchmentIdentity catchmentIdentity);
 
         Task<List<AnomalyIdentity>> GetAllAnomaliesInCatchment(CatchmentIdentity catchmentIdentity);
-
-        #endregion
-
-
-        #region Organization
-
-        Task SetOrganization(AnomalyIdentity anomalyIdentity, OrganizationIdentity organizationIdentity);
 
         #endregion
 
