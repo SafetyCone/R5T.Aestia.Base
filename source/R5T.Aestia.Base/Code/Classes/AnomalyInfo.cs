@@ -22,8 +22,8 @@ namespace R5T.Aestia
         public int UpvotesCount { get; set; }
 
         // Extension properties.
-        public bool HasReportedLocation => NullHelper.NotNull(this.ReportedLocationIdentity);
-        public bool HasReporterLocation => NullHelper.NotNull(this.ReporterLocationIdentity);
+        public bool HasReportedLocation => NullHelper.IsNonNull(this.ReportedLocationIdentity);
+        public bool HasReporterLocation => NullHelper.IsNonNull(this.ReporterLocationIdentity);
         public bool HasUpvotes => this.UpvotesCount > 0;
     }
 }
